@@ -1,6 +1,7 @@
 package com.hd520.thinking_in_code.sort;
 
-import com.didi.cia.kms.linkedList.MyNode;
+
+import com.hd520.thinking_in_code.linkedList.MyNode;
 
 /**
  * @Description 基于链表的
