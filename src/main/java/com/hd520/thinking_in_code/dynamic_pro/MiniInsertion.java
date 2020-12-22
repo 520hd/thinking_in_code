@@ -5,7 +5,7 @@ package com.hd520.thinking_in_code.dynamic_pro;
  * @Author xierishi
  * @Date 2020-12-22 23:28:24
  */
-public class MinInsertion {
+public class MiniInsertion {
 
 	public int minInsertion(String word) {
 

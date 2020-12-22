@@ -5,7 +5,7 @@ package com.hd520.thinking_in_code.dynamic_pro;
  * @Author xierishi
  * @Date 2020-12-22 16:27:04
  */
-public class MinDeleteDistance {
+public class MiniDeleteDistance {
 
 	public int minDistance(String s1, String s2) {
 
@@ -35,8 +35,8 @@ public class MinDeleteDistance {
 
 	public static void main(String[] args) {
 
-		MinDeleteDistance minDeleteDistance = new MinDeleteDistance();
-		int minDistance = minDeleteDistance.minDistance("sea", "eat");
+		MiniDeleteDistance miniDeleteDistance = new MiniDeleteDistance();
+		int minDistance = miniDeleteDistance.minDistance("sea", "eat");
 		System.out.println(minDistance);
 
 	}

@@ -5,7 +5,7 @@ package com.hd520.thinking_in_code.dynamic_pro;
  * @Author xierishi
  * @Date 2020-12-22 16:27:04
  */
-public class MinDeleteSum {
+public class MiniDeleteSum {
 
 	public int minDeleteSum(String s1, String s2) {
 
@@ -36,8 +36,8 @@ public class MinDeleteSum {
 
 	public static void main(String[] args) {
 
-		MinDeleteSum minDeleteSum = new MinDeleteSum();
-		int minDelete = minDeleteSum.minDeleteSum("sea", "eat");
+		MiniDeleteSum miniDeleteSum = new MiniDeleteSum();
+		int minDelete = miniDeleteSum.minDeleteSum("sea", "eat");
 		System.out.println(minDelete);
 
 	}
