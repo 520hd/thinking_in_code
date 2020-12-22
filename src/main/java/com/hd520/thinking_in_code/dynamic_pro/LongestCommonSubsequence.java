@@ -27,9 +27,9 @@ public class LongestCommonSubsequence {
 			for (int j = 0; j < str2Len; j++) {
 				if (str1.charAt(i) == str2.charAt(j)) {
 					// 当当前的字符相等的时候, 则最大值就是
-					dp[i + 1][j + 1] = max(dp[i][j] + 1, dp[i][j + 1] + 1, dp[i + 1][j] + 1);
+					dp[i + 1][j + 1] = dp[i][j] + 1;
 				} else {
-					dp[i + 1][j + 1] = max(dp[i][j], dp[i][j + 1], dp[i + 1][j]);
+					dp[i + 1][j + 1] = Math.max(dp[i][j + 1], dp[i + 1][j]);
 				}
 
 			}
@@ -43,10 +43,6 @@ public class LongestCommonSubsequence {
 		}
 		return dp[str1Len][str2Len];
 
-	}
-
-	private int max(int a, int b, int c) {
-		return Math.max(a, Math.max(b, c));
 	}
 
 	public static void main(String[] args) {
