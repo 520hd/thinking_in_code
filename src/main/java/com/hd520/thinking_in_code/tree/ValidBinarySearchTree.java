@@ -7,7 +7,7 @@ import com.hd520.thinking_in_code.util.TreeNode;
  * @Author xierishi
  * @Date 2020-12-23 20:44:47
  */
-public class ValidBST {
+public class ValidBinarySearchTree {
 
 	public boolean isValidBST(TreeNode root) {
 

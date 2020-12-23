@@ -8,7 +8,7 @@ import com.hd520.thinking_in_code.util.TreeOperation;
  * @Author xierishi
  * @Date 2020-12-23 23:47:49
  */
-public class RecoverBST {
+public class RecoverBinarySearchTree {
 
 	TreeNode first;
 	TreeNode last;
@@ -49,8 +49,8 @@ public class RecoverBST {
 		root.right = new TreeNode(4);
 		root.right.left = new TreeNode(2);
 		TreeOperation.show(root);
-		RecoverBST recoverBST = new RecoverBST();
-		recoverBST.recoverTree(root);
+		RecoverBinarySearchTree recoverBinarySearchTree = new RecoverBinarySearchTree();
+		recoverBinarySearchTree.recoverTree(root);
 		TreeOperation.show(root);
 
 	}
