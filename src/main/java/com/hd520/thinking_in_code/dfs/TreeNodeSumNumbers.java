@@ -46,6 +46,7 @@ class TreeNodeSumNumbers {
 			return;
 		}
 
+		// 由于二叉树是不会走重复的路线,因此可以不需要判断是否已走过的路线
 		// 对左节点进行回溯, 一定要对节点进行判空
 		if (root.left != null) {
 			backtrack(root.left, queue);

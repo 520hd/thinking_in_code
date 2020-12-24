@@ -1,5 +1,7 @@
 package com.hd520.thinking_in_code.util;
 
+import java.util.Arrays;
+
 /**
  * @Description
  * @Author xierishi
@@ -83,4 +85,30 @@ public class TreeOperation {
 			System.out.println(sb.toString());
 		}
 	}
+
+	public static TreeNode fromArray(Integer[] array) {
+		return createTree(array, 0);
+	}
+
+	public static TreeNode createTree(Integer[] array, int index) {
+
+		TreeNode root = null;
+		if (index < array.length) {
+			Integer val = array[index];
+			root = new TreeNode(val);
+			if (val == null) {
+				return null;
+			}
+			// 这个需要节点进行构建自己的左右子节点,一次需要进行前序遍历
+			root.left = createTree(array, 2 * index + 1);
+			root.right = createTree(array, 2 * index + 2);
+		}
+		return root;
+	}
+
+	public static void main(String[] args) {
+		TreeNode treeNode = TreeOperation.fromArray(new Integer[]{1, 2, null, 4, 5});
+		TreeOperation.show(treeNode);
+	}
+
 }
