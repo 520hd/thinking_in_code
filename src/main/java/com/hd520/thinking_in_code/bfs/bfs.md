@@ -4,7 +4,7 @@
 广度优先搜索的本质就是 让你在一幅[图]中 找到从起点 start 到 终点 target 的最近距离
 
 广度优先搜索的核心代码框架:
-`// 计算从起点start到终点target的最近距离
+// 计算从起点start到终点target的最近距离
 int BFS(Node start, Node target) {
     Queue<Node> q; // 核心数据结构
     Set<Node> visited; // 避免走回头路
@@ -30,7 +30,7 @@ int BFS(Node start, Node target) {
         // [划重点 在次数更新步数]
         step++;
     }
-}`
+}
 * 队列就是广度优先搜索bfs的核心数据结构, 就是类似于从起点start到终点target一层一层的进行地毯式搜索.
 
 bfs相对于dfs的最大区别是:
