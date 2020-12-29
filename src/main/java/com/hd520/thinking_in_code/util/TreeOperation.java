@@ -86,11 +86,16 @@ public class TreeOperation {
 		}
 	}
 
+	/**
+	 * 从数组创建二叉树
+	 * @param array
+	 * @return
+	 */
 	public static TreeNode fromArray(Integer[] array) {
 		return createTree(array, 0);
 	}
 
-	public static TreeNode createTree(Integer[] array, int index) {
+	private static TreeNode createTree(Integer[] array, int index) {
 
 		TreeNode root = null;
 		if (index < array.length) {

@@ -1,4 +1,4 @@
-package com.hd520.thinking_in_code.tree;
+package com.hd520.thinking_in_code.tree.bst;
 
 import com.hd520.thinking_in_code.util.TreeNode;
 

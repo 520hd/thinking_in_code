@@ -1,4 +1,4 @@
-package com.hd520.thinking_in_code.tree;
+package com.hd520.thinking_in_code.tree.bst;
 
 import com.hd520.thinking_in_code.util.TreeNode;
 import com.hd520.thinking_in_code.util.TreeOperation;
@@ -26,7 +26,7 @@ public class RecoverBinarySearchTree {
 		}
 		inOrder(root.left);
 		// 如果两个错位的数是相邻的可以直接添加为first和last
-		// 如果两个错位的书不是相邻的, 第一个数之前已经添加, 当遍历到第二个数的时候只需要添加last即可
+		// 如果两个错位的数不是相邻的, 第一个数之前已经添加, 当遍历到第二个数的时候只需要添加last即可
 		if (pre != null && pre.val > root.val) {
 			if (first == null) {
 				first = pre;
