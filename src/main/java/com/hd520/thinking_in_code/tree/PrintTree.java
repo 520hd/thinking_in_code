@@ -6,47 +6,49 @@ import com.hd520.thinking_in_code.util.TreeOperation;
 import java.util.*;
 
 /**
- * @Description
+ * @Description 打印二叉树
+ * leetcode 655
  * @Author xierishi
  * @Date 2021-01-05 20:32:26
  */
-public class TreeNodeDepth {
+public class PrintTree {
 
+	List<List<String>> ret = new ArrayList<>();
 	public List<List<String>> printTree(TreeNode root) {
 
 		if (root == null) {
 			return ret;
 		}
-		totalDepth = depth(root);
-		int size = (int) Math.pow(2, totalDepth) - 1;
+		int depth = depth(root);
+		int size = (int) Math.pow(2, depth) - 1;
 		String[] treeArray = new String[size];
 		Arrays.fill(treeArray, "");
-		int count = totalDepth;
-		while (count-- > 0) {
+		for (int i = 0; i < depth; i++) {
 			ret.add(new ArrayList<>(Arrays.asList(treeArray)));
-			// 如下是浅拷贝,禁用
-			ret.add(Arrays.asList(treeArray));
+			// 如下是浅拷贝, 会有坑
+			// ret.add(Arrays.asList(treeArray));
 		}
-		handle(root, 0, size - 1);
+		handle(root, 0, size - 1, 0);
 		return ret;
 	}
 
-	List<List<String>> ret = new ArrayList<>();
-	int totalDepth;
-	private void handle(TreeNode root, int start, int end) {
+	/**
+	 * 每次递归将pos带上, 往下走pos + 1
+	 * @param root
+	 * @param start
+	 * @param end
+	 * @param pos
+	 */
+	private void handle(TreeNode root, int start, int end, int pos) {
 		if (root == null || start > end) {
 			return;
 		}
 		int index = start + (end - start) / 2;
-		int depth = depth(root);
-		System.out.println(index);
-		System.out.println(depth);
-		List<String> strings = ret.get(totalDepth - depth);
-		System.out.println(strings);
+		List<String> strings = ret.get(pos);
 		strings.set(index, Integer.toString(root.val));
 
-		handle(root.left, start, index - 1);
-		handle(root.right, index + 1, end);
+		handle(root.left, start, index - 1, pos + 1);
+		handle(root.right, index + 1, end, pos + 1);
 
 	}
 
@@ -60,10 +62,10 @@ public class TreeNodeDepth {
 	}
 
 	public static void main(String[] args) {
-		TreeNodeDepth treeNodeDepth = new TreeNodeDepth();
+		PrintTree printTree = new PrintTree();
 		TreeNode treeNode = TreeOperation.fromArray(new Integer[]{1, 2});
 
-		List<List<String>> lists = treeNodeDepth.printTree(treeNode);
+		List<List<String>> lists = printTree.printTree(treeNode);
 		System.out.println(lists);
 	}
 }
