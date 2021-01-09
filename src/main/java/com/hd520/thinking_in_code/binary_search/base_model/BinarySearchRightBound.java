@@ -52,7 +52,7 @@ public class BinarySearchRightBound {
 				left = mid + 1;
 			}
 		}
-		if (right == 0 || nums[right] != target) {
+		if (right < 0 || nums[right] != target) {
 			return -1;
 		}
 		return right;
@@ -61,9 +61,9 @@ public class BinarySearchRightBound {
 
 	public static void main(String[] args) {
 		BinarySearchRightBound binarySearchRightBound = new BinarySearchRightBound();
-		int[] nums = new int[]{1,2,4,6,6,6,6,6,7,8,9,10};
-		int rightBound = binarySearchRightBound.searchRightBound(nums, 6);
-		int rightBoundCommon = binarySearchRightBound.searchRightBoundCommon(nums, 6);
+		int[] nums = new int[]{1};
+		int rightBound = binarySearchRightBound.searchRightBound(nums, 0);
+		int rightBoundCommon = binarySearchRightBound.searchRightBoundCommon(nums, 0);
 		System.out.println(rightBound);
 		System.out.println(rightBoundCommon);
 
