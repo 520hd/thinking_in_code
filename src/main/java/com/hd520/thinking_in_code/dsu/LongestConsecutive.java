@@ -1,10 +1,6 @@
 package com.hd520.thinking_in_code.dsu;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-import java.util.function.Function;
+import java.util.*;
 
 /**
  * @Description 给定一个未排序的整数数组 nums ，找出数字连续的最长序列（不要求序列元素在原数组中连续）的长度。
@@ -13,6 +9,41 @@ import java.util.function.Function;
  * @Date 2021-01-12 16:48:29
  */
 public class LongestConsecutive {
+
+	/**
+	 * 根据题意可以发现, nums[i] 的取值范围是[-109, 109]
+	 * 因此可以运用hashMap进行计算
+	 * @param nums
+	 * @return
+	 */
+	public int longestConsecutivePro(int[] nums) {
+		if (nums == null || nums.length == 0) {
+			return 0;
+		}
+
+		Map<Integer, Integer> map = new HashMap<>();
+
+		int max = Integer.MIN_VALUE;
+		for (int i = 0; i < nums.length; i++) {
+			max = Math.max(max, nums[i]);
+			map.put(nums[i], i);
+		}
+
+		int countMax = 0;
+		for (int i = max; i >= -109;) {
+			if (map.get(i) == null) {
+				i--;
+				continue;
+			}
+			int count = 0;
+			while (map.get(i) != null) {
+				count++;
+				i--;
+			}
+			countMax = Math.max(count, countMax);
+		}
+		return countMax;
+	}
 
 	private int[] size;
 	private int[] parent;
